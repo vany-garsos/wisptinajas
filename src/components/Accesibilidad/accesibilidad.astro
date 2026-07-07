@@ -1,0 +1,105 @@
+---
+import Section from "../UI/Section.astro";
+---
+
+<Section id="accesibilidad" title="Accesibilidad">
+  <div class="mx-auto max-w-5xl">
+
+    <p class="mx-auto max-w-3xl text-center text-gray-300">
+      Con el propósito de facilitar el acceso a la información para todas las personas,
+      ponemos a disposición versiones en audio de documentos importantes relacionados
+      con nuestros servicios.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+
+      <!-- Contrato -->
+      <article class="rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-lg">
+
+        <div class="mb-4 flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/15">
+            🎧
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-white">
+              Contrato de Adhesión
+            </h3>
+
+            <p class="text-sm text-gray-400">
+              Versión en audio
+            </p>
+          </div>
+        </div>
+
+        <audio controls class="w-full">
+          <source src="/audio/contrato.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio.
+        </audio>
+
+        <div class="mt-5 flex gap-3">
+          <a
+            href="/documentos/contrato.pdf"
+            target="_blank"
+            class="rounded-lg border border-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/10"
+          >
+            📄 Ver PDF
+          </a>
+
+          <a
+            href="/audio/contrato.mp3"
+            class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+          >
+            Descargar audio
+          </a>
+        </div>
+
+      </article>
+
+      <!-- Carta -->
+      <article class="rounded-2xl border border-white/10 bg-gray-900/60 p-6 shadow-lg">
+
+        <div class="mb-4 flex items-center gap-3">
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/15">
+            🎧
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-white">
+              Carta de Derechos Mínimos
+            </h3>
+
+            <p class="text-sm text-gray-400">
+              Versión en audio
+            </p>
+          </div>
+        </div>
+
+        <audio controls class="w-full">
+          <source src="/audios/Carta de derechos mínimos.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio.
+        </audio>
+
+        <div class="mt-5 flex gap-3">
+          <a
+            href="/docs/Carta de Derechos Mínimos de los Usuarios 22.12.2023.pdf"
+            target="_blank"
+            class="rounded-lg border border-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/10"
+          >
+            📄 Ver PDF
+          </a>
+
+          <a
+            href="/audios/Carta de derechos mínimos.mp3"
+            class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
+          >
+            Descargar audio
+          </a>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</Section>

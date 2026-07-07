@@ -1,0 +1,95 @@
+---
+import Section from "../UI/Section.astro";
+---
+
+<Section id="payments" title="Formas de Pago">
+  <div class="mx-auto max-w-5xl">
+    <div class="rounded-3xl border border-white/10 bg-gray-900/60 p-8 shadow-xl">
+
+      <p class="text-center text-sm text-gray-300">
+        Puedes realizar el pago de tu servicio mediante transferencia o depósito bancario.
+        Una vez efectuado el pago, envía tu comprobante por WhatsApp para validar tu pago.
+      </p>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+
+        <!-- Datos bancarios -->
+        <div class="rounded-2xl border border-white/10 bg-black/30 p-6">
+          <h3 class="mb-5 text-xl font-semibold text-white">
+            Datos bancarios
+          </h3>
+
+          <div class="space-y-4">
+
+            <div>
+              <p class="text-sm text-gray-400">Beneficiario</p>
+              <p class="font-medium text-white">
+                WISP TINAJAS
+              </p>
+            </div>
+
+            <div>
+              <p class="text-sm text-gray-400">Banco</p>
+              <p class="font-medium text-white">
+                BBVA
+              </p>
+            </div>
+
+            <div>
+              <p class="text-sm text-gray-400">Número de cuenta</p>
+              <p class="font-mono text-white">
+                0126744982
+              </p>
+            </div>
+
+            <div>
+              <p class="text-sm text-gray-400">CLABE interbancaria</p>
+              <p class="font-mono text-white break-all">
+                012266001267449824
+              </p>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Instrucciones -->
+        <div class="rounded-2xl border border-primary/30 bg-primary/10 p-6">
+          <h3 class="mb-5 text-xl font-semibold text-primary">
+            Confirmación de pago
+          </h3>
+
+          <ol class="space-y-4 text-gray-300">
+            <li>
+              <span class="font-semibold text-white">1.</span>
+              Realiza tu transferencia o depósito utilizando los datos bancarios.
+            </li>
+
+            <li>
+              <span class="font-semibold text-white">2.</span>
+              Guarda el comprobante de pago.
+            </li>
+
+            <li>
+              <span class="font-semibold text-white">3.</span>
+              Envía el comprobante por WhatsApp indicando tu nombre completo o número de contrato.
+            </li>
+          </ol>
+
+          <a
+            href="https://wa.me/527676711718"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-8 inline-flex items-center rounded-xl bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90"
+          >
+            Enviar comprobante por WhatsApp
+          </a>
+
+          <p class="mt-4 text-sm text-gray-400">
+            La validación del pago se realizará una vez recibido el comprobante.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</Section>

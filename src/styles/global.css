@@ -2,35 +2,77 @@
 
 
 .primary {
-  color: #7836cf;
+  color: #647ef5;
 }
+
 .secondary {
-  color: #512092;
+  color: #3f5bd9;
 }
+
+.strong {
+  color: #1e3a8a;
+}
+
 .bg-primary {
-  background-color: #7836cf;
+  background-color: #647ef5;
 }
+
 .bg-secondary {
-  background-color: #512092;
+  background-color: #3f5bd9;
 }
+
+.bg-strong {
+  background-color: #1e3a8a;
+}
+
+/* fondos oscuros */
+.bg-dark {
+  background-color: #0b0f2a;
+}
+
+.bg-card {
+  background-color: #141b3a;
+}
+
 .text-primary {
-  color: #7836cf;
+  color: #647ef5;
 }
 
-/* reglas hover (usar estas clases directamente) */
+.text-secondary {
+  color: #8fa2ff;
+}
+
+.text-muted {
+  color: #aab0d6;
+}
+
+/* reglas hover */
 .hover-text-secondary:hover {
-  color: #7836cf;
-}
-.hover-bg-secondary:hover {
-  background-color: #7836cf;
-}
-.hover\:bg-secondary:hover {
-  background-color: #512092;
-}
-.hover\:text-secondary:hover {
-  color: #512092;
+  color: #8fa2ff;
 }
 
+.hover-bg-secondary:hover {
+  background-color: #3f5bd9;
+}
+
+.hover\:bg-secondary:hover {
+  background-color: #3f5bd9;
+}
+
+.hover\:text-secondary:hover {
+  color: #8fa2ff;
+}
+
+/* sombras */
 .text-shadow {
-  text-shadow: 2px 2px 0 #620deb;
+  text-shadow: 2px 2px 0 #1e3a8a;
+}
+
+.text-shadow-soft {
+  text-shadow: 2px 2px 4px #3f5bd9;
+}
+
+/* glow */
+.glow {
+  box-shadow: 0 0 15px #647ef5;
 }

@@ -4,8 +4,38 @@ import Section from "../UI/Section.astro";
 import { PROJECTS } from "../../data/projects";
 ---
 
-<Section id="projects" title="Projects" titleClassName="mb-24">
-    <div class="flex flex-col gap-y-32">
-        {PROJECTS.map((project) => <CardProyect {...project} />)}
-    </div>
+<Section id="plan" title="Planes de Servicio">
+  <div class="flex flex-wrap gap-10">
+    {PROJECTS.map((project) => <CardProyect {...project} />)}
+  </div>
+
+  <!-- Leyendas -->
+  <div class="mt-10 max-w-4xl mx-auto text-center space-y-4 text-xs text-gray-400">
+     <p>
+      <strong>*</strong> El servicio de internet fijo se presta bajo tecnología
+      inalámbrica, en la cual se transmiten datos a través de microondas, y es
+      para uso residencial, es decir, debe utilizarse el servicio conforme al
+      consumo de un sólo hogar sin fines de lucro. Las velocidades de subida y
+      bajada (carga y descarga) ofertadas serán las mismas debido a que el
+      servicio es simétrico con entrega de mejor esfuerzo (Best Effort).
+    </p>
+
+    <p>
+      <strong>*</strong> Costo mensual. Los precios están señalados en Moneda
+      Nacional e incluyen impuestos.
+    </p>
+
+    <p class="mt-2">
+  Para más información respecto a las tarifas puede consultar el visor de tarifas
+  del Instituto Federal de Telecomunicaciones en el siguiente enlace:
+  <a
+    href="https://tarifas.ift.org.mx/ift_visor/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="font-medium text-[#647ef5] underline underline-offset-4 transition-colors hover:text-[#8ea2ff]"
+  >
+    Visor de Tarifas del IFT
+  </a>.
+</p>
+  </div>
 </Section>

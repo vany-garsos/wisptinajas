@@ -1,0 +1,74 @@
+---
+import Section from "../UI/Section.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Section id="ubicacion" title="Ubicación">
+  <div
+    class="max-w-4xl mx-auto mb-10"
+    data-aos="fade-up"
+    data-aos-delay="200"
+  >
+    <div
+      class="bg-gray-900/50 border border-white/10 rounded-2xl p-8 shadow-xl"
+    >
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="flex items-start gap-4">
+          <div
+            class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center"
+          >
+            <Icon name="lucide:map-pin" class="w-6 h-6 text-primary" />
+          </div>
+
+          <div>
+            <h3 class="text-white font-semibold mb-1">
+              Dirección
+            </h3>
+
+            <p class="text-gray-400">
+              40701 Las Tinajas, Guerrero
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div
+            class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center"
+          >
+            <Icon name="lucide:clock-3" class="w-6 h-6 text-primary" />
+          </div>
+
+          <div>
+            <h3 class="text-white font-semibold mb-1">
+              Horario de atención
+            </h3>
+
+            <p class="text-gray-400">
+              Lunes a Sábado
+            </p>
+
+            <p class="text-gray-400">
+              9:00 AM - 4:00 PM
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="w-full max-w-4xl mx-auto overflow-hidden rounded-2xl border border-white/10 shadow-2xl"
+    data-aos="fade-up"
+    data-aos-delay="400"
+  >
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3786.7376220464225!2d-100.7081358!3d18.3592507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84332d006ccf2fb5%3A0x8ae2f097987b2249!2sWISP%20TINAJAS!5e0!3m2!1ses-419!2smx!4v1776867902485!5m2!1ses-419!2smx"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</Section>

@@ -5,86 +5,124 @@ import Badge from "../UI/Badge.astro";
 
 interface Props {
     title: string;
-    description: string;
-    image: string;
+    price: number;
+    subida: string;
+    descarga:string;
+    folio:number;
+    color: string;
+    bgColor: string;
     tags: Array<{
         name: string;
         class: string;
         icon: string;
     }>;
-    link?: string;
-    github?: string;
 }
 
-const { image, title, description, tags, link, github } = Astro.props;
+const { title, price, subida, descarga, folio, color, bgColor, tags } = Astro.props;
 ---
-
 <article
-    class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-16 md:space-y-0 items-center"
-    data-aos="fade-up"
+  class="group max-w-sm mx-auto overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+  data-aos="fade-up"
 >
-    <!-- Image Container (Smaller on desktop) -->
-    <div class="w-full md:w-2/5">
-        <div
-            class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-2xl overflow-clip rounded-2xl md:group-hover:-translate-y-2 md:group-hover:shadow-[0_0_30px_rgba(120,54,207,0.3)] border border-white/10 hover:border-primary/50 bg-gray-900/50"
-        >
-            <img
-                alt={title}
-                class="object-cover object-top w-full aspect-video transition duration-500 md:scale-110 md:group-hover:scale-105"
-                loading="lazy"
-                src={image}
-            />
+  <!-- Nombre del plan -->
+  <div class={`${bgColor} py-4 px-4 text-center`}>
+    <h3 class="text-xl font-bold tracking-wide text-white">
+      {title}
+    </h3>
+  </div>
+
+  <div class="p-6">
+    <!-- Precio -->
+    <div class="text-center">
+    <p class={`text-5xl font-black ${color} leading-none`}>
+  ${price}<sup class="ml-1 text-lg align-super">*</sup>
+</p>
+
+      <p class="mt-2 text-xs uppercase tracking-widest text-gray-500">
+        Pago mensual
+      </p>
+    </div>
+
+    <!-- Separador -->
+    <div class="my-5 h-px bg-gray-200"></div>
+
+<!-- Beneficios -->
+<ul class="space-y-3 mb-6">
+
+ 
+
+
+  <!-- Tags -->
+  {
+    tags?.map((tag) => (
+      <li class="flex items-center gap-3 text-gray-700">
+
+        <div class={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${bgColor}/20`}>
+          <Icon 
+            name={tag.icon} 
+            class={`h-4 w-4 ${color}`}
+          />
         </div>
+
+        <span class="text-sm font-medium">
+          {tag.name}
+        </span>
+
+      </li>
+    ))
+  }
+
+   <!-- Velocidad descarga -->
+  <li class="flex items-center gap-3 text-gray-700">
+    <div class={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${bgColor}/20`}>
+      <Icon 
+        name="lucide:download" 
+        class={`h-4 w-4 ${color}`}
+      />
     </div>
 
-    <!-- Content Container -->
-    <div class="w-full md:w-3/5">
-        <h3
-            class="text-3xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300"
-        >
-            {title}
-        </h3>
+    <span class="text-sm font-medium">
+      {descarga}
+    </span>
+  </li>
 
-        <ul class="flex flex-wrap mb-6 gap-2">
-            {
-                tags &&
-                    tags.map((tag) => (
-                        <li>
-                            <Badge
-                                class:list={[
-                                    "flex items-center gap-x-2 text-xs py-1.5 px-3 border-white/5",
-                                    tag.class,
-                                ]}
-                            >
-                                <Icon name={tag.icon} class="size-4" />
-                                {tag.name}
-                            </Badge>
-                        </li>
-                    ))
-            }
-        </ul>
 
-        <p class="text-lg text-gray-300 mb-8 leading-relaxed font-light">
-            {description}
-        </p>
-
-        <footer class="flex items-center justify-start gap-x-4">
-            {
-                github && (
-                    <LinkButton href={github}>
-                        <Icon name="lucide:github" class="size-5" />
-                        Source Code
-                    </LinkButton>
-                )
-            }
-            {
-                link && (
-                    <LinkButton href={link}>
-                        <Icon name="lucide:external-link" class="size-4" />
-                        Live Demo
-                    </LinkButton>
-                )
-            }
-        </footer>
+  <!-- Velocidad subida -->
+  <li class="flex items-center gap-3 text-gray-700">
+    <div class={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${bgColor}/20`}>
+      <Icon 
+        name="lucide:upload" 
+        class={`h-4 w-4 ${color}`}
+      />
     </div>
+
+    <span class="text-sm font-medium">
+      {subida}
+    </span>
+  </li>
+
+  <!-- Folio IFT -->
+<li class="flex items-center gap-3 text-gray-700">
+  <div class={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${bgColor}/20`}>
+    <Icon 
+      name="lucide:file-text" 
+      class={`h-4 w-4 ${color}`}
+    />
+  </div>
+
+  <span class="text-sm font-medium">
+    Número de inscripción IFT: {folio}
+  </span>
+</li>
+
+</ul>
+
+    <!-- Botón -->
+    <a
+      href="#contacto"
+      class={`block w-full text-center ${bgColor} text-white font-semibold py-3 rounded-xl hover:opacity-80 transition`}
+    >
+      Contacto
+    </a>
+  </div>
 </article>

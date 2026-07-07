@@ -1,0 +1,72 @@
+---
+import { Icon } from "astro-icon/components";
+import { WIPS } from "../../data/personal";
+import Section from "../UI/Section.astro";
+import Badge from "../UI/Badge.astro";
+---
+
+<Section id="contacto" title="Contacto">
+  <p
+    class="text-xl text-gray-400 mb-16 text-center max-w-2xl mx-auto font-light"
+    data-aos="fade-up"
+    data-aos-delay="200"
+  >
+    Estamos listos para ayudarte. Contáctanos por WhatsApp y recibe atención personalizada.
+  </p>
+
+  <div
+    class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto"
+    data-aos="fade-up"
+    data-aos-delay="400"
+  >
+    {
+      WIPS.telefonos.map((tel) => (
+        <a
+          href={`https://wa.me/52${tel}?text=Hola,%20quiero%20información%20sobre%20su%20servicio%20de%20internet.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group"
+        >
+          <div
+            class="h-full bg-gray-900/50 border border-white/10 rounded-2xl p-6
+                   hover:border-[#647EF5]/50 hover:-translate-y-2
+                   hover:shadow-[0_0_30px_rgba(100,126,245,0.15)]
+                   transition-all duration-300"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#647EF5]/20 flex items-center justify-center"
+              >
+                <Icon
+                  name="lucide:message-circle-more"
+                  class="size-7 text-[#647EF5]"
+                />
+              </div>
+
+              <div>
+                <p class="text-sm text-gray-400">
+                  WhatsApp
+                </p>
+
+                <p class="text-lg font-semibold text-white">
+                  {tel}
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center justify-between text-sm text-gray-400"
+            >
+              <span>Respuesta rápida</span>
+
+              <Icon
+                name="lucide:arrow-up-right"
+                class="size-5 group-hover:text-[#647EF5] transition-colors"
+              />
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Section>

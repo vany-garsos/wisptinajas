@@ -7,50 +7,65 @@ import "aos/dist/aos.css";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Portfolio Developers</title>
-	</head>
-	<body class="text-white">
-		<Background />
-		<Navbar />
-		<slot />
-		<Footer />
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logoMen.png" />
+    <meta
+      name="description"
+      content="Internet de alta velocidad para hogares y negocios en más de 20 comunidades. Disfruta una conexión estable, rápida y sin interrupciones con Wisp Tinajas." />
+    <meta
+      property="og:title"
+      content="Wisp Tinajas - Internet de alta velocidad"
+    />
+    <meta
+      property="og:description"
+      content="Internet de alta velocidad para hogares y negocios en más de 20 comunidades. Disfruta una conexión estable, rápida y sin interrupciones con Wisp Tinajas." />
+    <meta
+      property="og:image"
+      content="https://wisp.com.mx/public/images/quienessomos.jpg"
+    />
+    <meta property="og:url" content="https://wisptinajas.com/" />
+    <meta property="og:type" content="website" />
+    <title>Wisp Tinajas</title>
+  </head>
+  <body class="text-white">
+    <Background />
+    <Navbar />
+    <slot />
+    <Footer />
 
-		<style is:global>
-			html,
-			body {
-				overflow-x: hidden;
-			}
-			html {
-				font-family: system-ui, sans-serif;
-				scroll-behavior: smooth;
-			}
+    <style is:global>
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
 
-			body {
-				margin: 0;
-				padding: 0;
-			}
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-			@media (prefers-reduced-motion: reduce) {
-				html {
-					scroll-behavior: auto;
-				}
-			}
-		</style>
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
 
-		<script>
-			import AOS from "aos";
-			AOS.init({
-				duration: 2000,
-				easing: "ease-out-cubic",
-				once: true,
-				offset: 100,
-			});
-		</script>
-	</body>
+    <script>
+      import AOS from "aos";
+      AOS.init({
+        duration: 2000,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 100,
+      });
+    </script>
+  </body>
 </html>

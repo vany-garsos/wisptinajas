@@ -1,37 +1,31 @@
 ---
-import { PERSONAL_INFO } from "../../data/personal";
+import { WIPS } from "../../data/personal";
 import Section from "../UI/Section.astro";
 import Title from "../UI/Title.astro";
 ---
 
-<Section id="contact" title="Get in Touch" titleClassName="mb-8">
-    <p
-        class="text-xl text-gray-400 mb-16 text-center max-w-2xl font-light"
-        data-aos="fade-up"
-        data-aos-delay="200"
-    >
-        I'm always open to discussing new projects, creative ideas or
-        opportunities to be part of your visions.
-    </p>
+<Section id="beneficios" title="Beneficios" titleClassName="mb-8">
+  <p
+    class="text-xl text-gray-400 mb-16 text-center max-w-2xl font-light"
+    data-aos="fade-up"
+    data-aos-delay="200"
+  >
+    Descubre los beneficios de contar con nuestro servicio de internet:
+  </p>
 
-    <!-- Links -->
-    <div
-        class="w-full max-w-xl space-y-6"
-        data-aos="fade-up"
-        data-aos-delay="400"
-    >
-        {
-            PERSONAL_INFO.socialLinks &&
-                PERSONAL_INFO.socialLinks.map((link) => (
-                    <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="block font-bold w-full rounded-xl bg-[#140d7c] hover:bg-[#0f0a55] drop-shadow-[5px_5px_0_#870deb] px-6 py-4 text-center text-white"
-                    >
-                        {link.label}
-                    </a>
-                ))
-        }
-    </div>
+  <!-- Links -->
+  <div
+    class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
+    data-aos="fade-up"
+    data-aos-delay="400"
+  >
+    {
+      WIPS.beneficios &&
+        WIPS.beneficios.map((beneficio) => (
+          <p class="font-bold rounded-xl bg-[#647ef5] hover:bg-[#3f5bd9] drop-shadow-[5px_5px_0_#1e3a8a] px-6 py-4 text-center text-white transition-all duration-200 hover:-translate-y-1">
+            {beneficio}
+          </p>
+        ))
+    }
+  </div>
 </Section>

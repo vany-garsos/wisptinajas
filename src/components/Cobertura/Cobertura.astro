@@ -1,0 +1,118 @@
+---
+import { WIPS } from "../../data/personal";
+import Section from "../UI/Section.astro";
+import Badge from "../UI/Badge.astro";
+---
+
+<Section id="cobertura" title="Cobertura">
+  <div class="max-w-6xl mx-auto">
+    <!-- Descripción -->
+    <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+      <h3 class="text-2xl font-bold text-white">
+        Consulta la cobertura en tu comunidad
+      </h3>
+
+      <p class="mt-4 text-gray-400 leading-relaxed">
+        Contamos con cobertura en diferentes comunidades de la región. Escribe
+        el nombre de tu comunidad en el buscador o consulta el mapa para
+        verificar si nuestro servicio está disponible.
+      </p>
+    </div>
+
+    <!-- Buscador -->
+    <div class="max-w-xl mx-auto mt-10" data-aos="fade-up" data-aos-delay="100">
+      <!-- Solo input + icono -->
+      <div class="relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+
+        <input
+          id="buscar-comunidad"
+          type="text"
+          placeholder="Buscar comunidad..."
+          class="w-full rounded-xl border border-gray-700 bg-[#23272f] py-4 pl-12 pr-4 text-white placeholder-gray-400 outline-none transition focus:border-[#647ef5] focus:ring-2 focus:ring-[#647ef5]"
+        />
+      </div>
+
+      <!-- Resultado -->
+      <div
+        id="resultado-busqueda"
+        class="mt-4 hidden rounded-xl p-4 text-center"
+      >
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div class="mt-16" data-aos="zoom-in">
+      <div class="flex justify-center overflow-hidden">
+        <img
+          src="/images/Comunidades.png"
+          alt="Mapa de cobertura"
+          class="w-full max-w-2xl h-auto rounded-2xl"
+        />
+      </div>
+    </div>
+
+    <!-- Nota -->
+    <div class="mt-8 text-center" data-aos="fade-up">
+      <p class="text-sm text-gray-400">
+        ¿No encuentras tu comunidad?
+        <span class="text-[#647ef5] font-medium">
+          Contáctanos y con gusto verificaremos la disponibilidad del servicio.
+        </span>
+      </p>
+    </div>
+  </div>
+</Section>
+
+<script define:vars={{ comunidades: WIPS.coberturas }}>
+  const input = document.getElementById("buscar-comunidad");
+  const resultado = document.getElementById("resultado-busqueda");
+
+  input.addEventListener("input", () => {
+    const texto = input.value.trim().toLowerCase();
+
+    if (texto === "") {
+      resultado.classList.add("hidden");
+      return;
+    }
+
+    const encontradas = comunidades.filter((comunidad) => {
+      const nombre = comunidad.toLowerCase();
+
+      return (
+        nombre.startsWith(texto) ||
+        nombre.split(" ").some((palabra) => palabra.startsWith(texto))
+      );
+    });
+
+    resultado.classList.remove("hidden");
+
+    if (encontradas.length > 0) {
+      resultado.className = "mt-4 rounded-xl p-4 text-center text-green-300";
+
+      resultado.innerHTML = `
+        <strong>Comunidades encontradas:</strong><br>
+        ${encontradas.join(", ")}
+      `;
+    } else {
+      resultado.className = "mt-4 rounded-xl p-4 text-center text-red-300";
+
+      resultado.innerHTML = `
+        <strong> No encontramos esa comunidad.</strong><br>
+        Ponte en contacto con nosotros para verificar disponibilidad.
+      `;
+    }
+  });
+</script>
