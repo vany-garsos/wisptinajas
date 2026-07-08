@@ -28,7 +28,7 @@
             class="relative group text-white font-bold transition-colors duration-300 hover:text-secondary"
             ><span
               class="absolute left-0 -bottom-2 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
-            ></span>Plan de servicio</a
+            ></span>Planes de servicio</a
           >
         </li>
         <li>
@@ -65,129 +65,173 @@
             Legal
           </a>
 
-          <ul
-            class="absolute right-0 mt-2 w-56 bg-gray-900 text-white rounded-lg shadow-lg z-50
-           opacity-0 invisible
-           group-hover:opacity-100
-           group-hover:visible
-           transition-all duration-300"
+          <div
+            class="absolute right-0 mt-2 w-56 bg-gray-900 rounded-lg shadow-lg z-50
+         opacity-0 invisible
+         group-hover:opacity-100
+         group-hover:visible
+         transition-all duration-300"
           >
-            <li>
-              <a
-                href="/docs/Aviso de Privacidad - WISP TINAJAS.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Aviso de Privacidad
-              </a>
-            </li>
+            <ul class="max-h-96 overflow-y-auto scrollbar-thin">
+              <li>
+                <a
+                  href="/docs/Aviso de Privacidad - WISP TINAJAS.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Aviso de Privacidad
+                </a>
+              </li>
 
-            <li class="relative group/avisos">
-              <a
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5] cursor-pointer"
-              >
-                Avisos importantes ◂
-              </a>
-
-              <ul
-                class="absolute right-full top-0 mr-1 w-64 bg-gray-900 rounded-lg shadow-lg z-50
-               opacity-0 invisible
-               group-hover/avisos:opacity-100
-               group-hover/avisos:visible
-               transition-all duration-300"
-              >
-                <li>
-                  <a
-                    href="/docs/WISP TINAJAS - Mapas de Cobertura.pdf"
-                    target="_blank"
-                    class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+              <li>
+                <details class="group">
+                  <summary
+                    class="list-none cursor-pointer px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5] flex justify-between"
                   >
-                    Mapas de Cobertura
-                  </a>
-                </li>
+                    Avisos importantes
+                    <span>▾</span>
+                  </summary>
 
-                <li>
-                  <a
-                    href="/docs/WISP TINAJAS- Atención a Usuarios.pdf"
-                    target="_blank"
-                    class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                  <ul class="bg-gray-800">
+                    <li>
+                      <a
+                        href="/docs/WISP TINAJAS - Mapas de Cobertura.pdf"
+                        class="block px-8 py-3 hover:text-[#647EF5]"
+                      >
+                        Mapas de Cobertura
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        href="/docs/WISP TINAJAS- Atención a Usuarios.pdf"
+                        class="block px-8 py-3 hover:text-[#647EF5]"
+                      >
+                        Atención a Usuarios
+                      </a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+
+              <li>
+                <a
+                  href="/docs/Carta de Derechos Mínimos de los Usuarios 22.12.2023.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Carta de Derechos Mínimos de los Usuarios
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/docs/WISP TINAJAS - Código de Políticas de Gestión de Tráfico.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Código de Gestión de Tráfico
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/docs/WISP TINAJAS- Colaboración en materia de seguridad.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Colaboración en Materia de Seguridad y Justicia
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/docs/Título de concesión WISP TINAJAS.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Título de Concesión
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/docs/WISP TINAJAS- Código Prácticas Comerciales.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Código de Prácticas Comerciales
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/docs/WISP TINAJAS- Lineamientos información transparente 2026.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Lineamientos de información transparente
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/docs/WISP TINAJAS - Procedimiento atención de quejas.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Procedimiento de atención a quejas
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/docs/PUAI WT.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Política de Uso Aceptable de Internet (PUAI)
+                </a>
+              </li>
+              <li>
+                <details class="group">
+                  <summary
+                    class="list-none cursor-pointer px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5] flex justify-between"
                   >
-                    Atención a Usuarios
-                  </a>
-                </li>
-              </ul>
-            </li>
+                    Formatos simplificados de las Tarifas
+                    <span>▾</span>
+                  </summary>
 
-            <li>
-              <a
-                href="/docs/Carta de Derechos Mínimos de los Usuarios 22.12.2023.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Carta de Derechos Mínimos de los Usuarios
-              </a>
-            </li>
+                  <ul class="bg-gray-800">
+                    <li>
+                      <a
+                        href="/docs/Tarifa-Internet fijo residencial (básico).pdf"
+                        class="block px-8 py-3 hover:text-[#647EF5]"
+                      >
+                        Internet fijo residencial BÁSICO
+                      </a>
+                    </li>
 
-            <li>
-              <a
-                href="/docs/WISP TINAJAS - Código de Políticas de Gestión de Tráfico.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Código de Gestión de Tráfico
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/docs/WISP TINAJAS- Colaboración en materia de seguridad.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Colaboración en Materia de Seguridad y Justicia
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/docs/Título de concesión WISP TINAJAS.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Título de Concesión
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/docs/WISP TINAJAS- Código Prácticas Comerciales.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Código de Prácticas Comerciales
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/docs/WISP TINAJAS- Lineamientos información transparente 2026.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Lineamientos de información transparente
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="/docs/WISP TINAJAS - Procedimiento atención de quejas.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                Procedimiento de atención a quejas
-              </a>
-            </li>
-            <li>
-              <a
-                href="/docs/PUAI WT.pdf"
-                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
-              >
-                PUAI WT
-              </a>
-            </li>
-          </ul>
+                    <li>
+                      <a
+                        href="/docs/Tarifa- Internet fijo residencial PLUS.pdf"
+                        class="block px-8 py-3 hover:text-[#647EF5]"
+                      >
+                        Internet fijo residencial PLUS
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/docs/Tarifa- Internet fijo residencial PREMIUM.pdf"
+                        class="block px-8 py-3 hover:text-[#647EF5]"
+                      >
+                        Internet fijo residencial PREMIUM
+                      </a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <a
+                  href="/docs/Características_Especificaciones + Formatos WT.pdf"
+                  class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+                >
+                  Características Especificaciones y Alcances Paquetes
+                  Comerciales
+                </a>
+              </li>
+            </ul>
+          </div>
         </li>
         <li>
           <a
@@ -376,6 +420,60 @@
                 class="block px-4 py-3 text-white hover:text-[#647EF5]"
               >
                 Procedimiento de atención a quejas
+              </a>
+            </li>
+            <li>
+              <a
+                href="/docs/PUAI WT.pdf"
+                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+              >
+                Política de Uso Aceptable de Internet (PUAI)
+              </a>
+            </li>
+            <li>
+              <details class="group">
+                <summary
+                  class="list-none cursor-pointer px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5] flex justify-between"
+                >
+                  Formatos simplificados de las Tarifas
+                  <span>▾</span>
+                </summary>
+
+                <ul class="bg-gray-800">
+                  <li>
+                    <a
+                      href="/docs/Tarifa-Internet fijo residencial (básico).pdf"
+                      class="block px-8 py-3 hover:text-[#647EF5]"
+                    >
+                      Internet fijo residencial BÁSICO
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/docs/Tarifa- Internet fijo residencial PLUS.pdf"
+                      class="block px-8 py-3 hover:text-[#647EF5]"
+                    >
+                      Internet fijo residencial PLUS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/docs/Tarifa- Internet fijo residencial PREMIUM.pdf"
+                      class="block px-8 py-3 hover:text-[#647EF5]"
+                    >
+                      Internet fijo residencial PREMIUM
+                    </a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a
+                href="/docs/Características_Especificaciones + Formatos WT.pdf"
+                class="block px-4 py-3 text-white hover:bg-gray-800 hover:text-[#647EF5]"
+              >
+                Características Especificaciones y Alcances Paquetes Comerciales
               </a>
             </li>
           </ul>
