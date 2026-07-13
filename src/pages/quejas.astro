@@ -1,0 +1,231 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="mx-auto max-w-5xl mt-24">
+    <div class="mx-auto max-w-5xl">
+      <div
+        class="rounded-3xl border border-white/10 bg-gray-900/60 p-8 shadow-xl"
+      >
+        <!-- Botones -->
+        <div
+          class="mx-auto flex w-full max-w-md rounded-2xl border border-white/10 bg-black/40 p-1"
+        >
+          <button
+            id="btnRegister"
+            type="button"
+            class="flex-1 rounded-xl bg-primary px-4 py-3 font-semibold text-white transition"
+          >
+            Registrar queja
+          </button>
+
+          <button
+            id="btnSearch"
+            type="button"
+            class="flex-1 rounded-xl px-4 py-3 font-semibold text-gray-300 transition hover:text-white"
+          >
+            Consultar folio
+          </button>
+        </div>
+
+        <!-- ================= REGISTRO ================= -->
+
+        <div id="registerSection" class="mt-10">
+          <h3 class="text-center text-2xl font-semibold text-white">
+            Registrar una queja o sugerencia
+          </h3>
+
+          <p class="mx-auto mt-3 max-w-3xl text-center text-sm text-gray-400">
+            Completa el siguiente formulario. Al finalizar se generará un número
+            de folio con el que podrás consultar el estado de tu solicitud.
+          </p>
+
+          <form id="complaintsForm" class="mt-10 grid gap-6 md:grid-cols-2">
+            <div>
+              <label class="mb-2 block text-sm text-gray-300">
+                Nombre completo del titular del servicio
+              </label>
+
+              <input
+                name="nombre"
+                type="text"
+                maxlength="120"
+                placeholder="Ingresa tu nombre"
+                class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label class="mb-2 block text-sm text-gray-300">
+                Correo electrónico
+              </label>
+
+              <input
+                name="correo"
+                type="email"
+                maxlength="120"
+                placeholder="correo@ejemplo.com"
+                class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label class="mb-2 block text-sm text-gray-300"> Teléfono </label>
+
+              <input
+                name="telefono"
+                type="tel"
+                placeholder="7671234567"
+                class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label class="mb-2 block text-sm text-gray-300">
+                Tipo de solicitud
+              </label>
+
+              <select
+                name="tipo"
+                class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-primary"
+              >
+                <option value="">Selecciona una opción</option>
+                <option value="Queja">Queja</option>
+                <option value="Sugerencia">Sugerencia</option>
+              </select>
+            </div>
+
+            <div class="md:col-span-2">
+              <label class="mb-2 block text-sm text-gray-300"> Asunto </label>
+
+              <input
+                name="asunto"
+                type="text"
+                maxlength="200"
+                placeholder="Asunto"
+                class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
+              />
+            </div>
+
+            <div class="md:col-span-2">
+              <label class="mb-2 block text-sm text-gray-300">
+                Descripción
+              </label>
+
+              <textarea
+                name="descripcion"
+                rows="6"
+                maxlength="3000"
+                placeholder="Describe detalladamente tu queja o sugerencia..."
+                class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
+              ></textarea>
+            </div>
+
+            <div
+              class="md:col-span-2 rounded-2xl border border-primary/30 bg-primary/10 p-5"
+            >
+              <p class="text-sm text-gray-300">
+                Una vez enviada tu solicitud, recibirás un
+                <span class="font-semibold text-white">número de folio</span>
+                único. <span class="font-semibold text-white"
+                  >Conserva este folio</span
+                >, pues lo necesitarás para consultar el estado y dar
+                seguimiento a tu solicitud.
+              </p>
+            </div>
+
+            <div class="md:col-span-2 text-center">
+              <button
+                type="submit"
+                class="rounded-xl bg-primary px-8 py-3 font-semibold text-white transition hover:opacity-90"
+              >
+                Enviar solicitud
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ================= CONSULTA ================= -->
+
+        <div id="searchSection" class="mt-10 hidden">
+          <h3 class="text-center text-2xl font-semibold text-white">
+            Consultar estado de una solicitud
+          </h3>
+
+          <p class="mx-auto mt-3 max-w-3xl text-center text-sm text-gray-400">
+            Ingresa el número de folio que recibiste al registrar tu queja o
+            sugerencia.
+          </p>
+
+          <form id="searchForm" class="mx-auto mt-10 max-w-xl">
+            <label class="mb-2 block text-sm text-gray-300">
+              Número de folio
+            </label>
+
+            <input
+              name="folio"
+              type="text"
+              placeholder="Ej. WT-20260710-0001"
+              class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
+            />
+
+            <button
+              type="submit"
+              class="mt-6 w-full rounded-xl bg-primary py-3 font-semibold text-white transition hover:opacity-90"
+            >
+              Consultar folio
+            </button>
+          </form>
+
+          <!-- Resultado -->
+
+          <div
+            id="searchResult"
+            class="mx-auto mt-10 hidden max-w-xl rounded-2xl border border-white/10 bg-black/30 p-6"
+          >
+            <h4 class="text-lg font-semibold text-white">
+              Resultado de la consulta
+            </h4>
+
+            <div class="mt-6 space-y-4">
+              <div>
+                <p class="text-sm text-gray-400">Folio</p>
+                <p id="folioResult" class="font-mono text-white"></p>
+              </div>
+
+              <div>
+                <p class="text-sm text-gray-400">Tipo</p>
+                <p id="tipoResult" class="text-white"></p>
+              </div>
+
+              <div>
+                <p class="text-sm text-gray-400">Estado</p>
+                <p id="estadoResult" class="font-semibold"></p>
+              </div>
+
+              <div>
+                <p class="text-sm text-gray-400">Fecha de registro</p>
+                <p id="fechaResult" class="text-white"></p>
+              </div>
+              <div id="seguimientoResult">
+                <div>
+                  <p class="text-sm text-gray-400">Última actualización</p>
+                  <p id="actualizacionResult" class="text-white"></p>
+                </div>
+                <div class="mt-2">
+                  <p class="text-sm text-gray-400">
+                    Comentario del administrador
+                  </p>
+                  <p id="comentarioResult" class="text-white"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script type="module" src="../../public/js/quejas.js"></script>

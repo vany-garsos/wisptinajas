@@ -49,7 +49,6 @@ import Section from "../UI/Section.astro";
             <input
               name="nombre"
               type="text"
-              
               maxlength="120"
               placeholder="Ingresa tu nombre"
               class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
@@ -64,7 +63,6 @@ import Section from "../UI/Section.astro";
             <input
               name="correo"
               type="email"
-            
               maxlength="120"
               placeholder="correo@ejemplo.com"
               class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
@@ -89,7 +87,6 @@ import Section from "../UI/Section.astro";
 
             <select
               name="tipo"
-              
               class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-primary"
             >
               <option value="">Selecciona una opción</option>
@@ -104,7 +101,6 @@ import Section from "../UI/Section.astro";
             <input
               name="asunto"
               type="text"
-              
               maxlength="200"
               placeholder="Asunto"
               class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
@@ -119,7 +115,6 @@ import Section from "../UI/Section.astro";
             <textarea
               name="descripcion"
               rows="6"
-              
               maxlength="3000"
               placeholder="Describe detalladamente tu queja o sugerencia..."
               class="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-gray-500 outline-none transition focus:border-primary"
@@ -211,6 +206,18 @@ import Section from "../UI/Section.astro";
             <div>
               <p class="text-sm text-gray-400">Fecha de registro</p>
               <p id="fechaResult" class="text-white"></p>
+            </div>
+            <div id="seguimientoResult">
+              <div>
+                <p class="text-sm text-gray-400">Última actualización</p>
+                <p id="actualizacionResult" class="text-white"></p>
+              </div>
+              <div class="mt-2">
+                <p class="text-sm text-gray-400">
+                  Comentario del administrador
+                </p>
+                <p id="comentarioResult" class="text-white"></p>
+              </div>
             </div>
           </div>
         </div>

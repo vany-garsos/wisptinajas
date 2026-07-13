@@ -130,12 +130,17 @@ searchForm.addEventListener("submit", async (e) => {
   }
 
   if (!resultado.success) {
+
+  searchForm.reset();
+    // Ocultar el resultado anterior
+  document.getElementById("searchResult").classList.add("hidden");
+  
     Swal.fire({
-      icon: "warning",
+      icon: "error",
       title: "Folio no encontrado",
       text:
         resultado.message ||
-        "No existe una solicitud registrada con ese folio.",
+        "No existe una solicitud registrada con el folio proporcionado.",
       confirmButtonText: "Aceptar",
       confirmButtonColor: "#647EF5",
     });
@@ -149,7 +154,20 @@ searchForm.addEventListener("submit", async (e) => {
 
   document.getElementById("fechaResult").textContent = resultado.data.fecha;
 
+  const seguimiento = document.getElementById("seguimientoResult");
+
+if (resultado.data.actualizacion || resultado.data.comentario) {
+    seguimiento.classList.remove("hidden");
+
+    document.getElementById("actualizacionResult").textContent = resultado.data.actualizacion || "";
+    document.getElementById("comentarioResult").textContent = resultado.data.comentario || "";
+} else {
+    seguimiento.classList.add("hidden");
+}
+
   document.getElementById("searchResult").classList.remove("hidden");
+
+  searchForm.reset();
 
   //Cambiar el color de acuerdo al status de la queja
   const estadoResult = document.getElementById("estadoResult");
@@ -169,14 +187,6 @@ searchForm.addEventListener("submit", async (e) => {
   switch (resultado.data.estado) {
     case "Recibida":
       estadoResult.classList.add("text-yellow-400");
-      break;
-
-    case "En revisión":
-      estadoResult.classList.add("text-blue-400");
-      break;
-
-    case "En proceso":
-      estadoResult.classList.add("text-orange-400");
       break;
 
     case "Resuelta":
